@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <title>大寰夹爪</title>
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+    <link href="../assets/bubble/bubble-slider.css" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-200" style="height: 90vh">
+
+        <div class="container-fluid px-2 px-md-4">
+          <!-- 背景图片 -->
+            <div class="page-header min-height-200 border-radius-xl mt-4" style="background-image: url('../assets/img/123.png')">
+                <span class="mask bg-gradient-primary opacity-1"></span>
+            </div>
+            <div class="card card-body mx-3 mx-md-4 mt-n6">
+                <!-- 导航栏 -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home1" type="button" role="tab" aria-controls="home" aria-selected="true">
+                          控制
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade show active pt-3" id="home1" role="tabpanel" aria-labelledby="home-tab">
+                        <!-- 页面标签图片及文案 -->
+                        <div class="row gx-4 mb-2">
+
+                            <div class="col-auto">
+                                <div class="avatar avatar-xl position-relative">
+                                    <img src="../assets/img/PGE.png" alt="profile_image" class="w-100 border-radius-lg shadow-sm" />
+                                </div>
+                            </div>
+
+                            <div class="col-auto my-auto">
+                                <div class="h-100">
+                                    <h5 class="mb-1">PGE 系列</h5>
+                                    <p class="mb-0 font-weight-normal text-sm">
+                                        该AddOn适用PGE-5/8/15/50机型。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mb-0 font-weight-normal text-sm">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                        <!-- 初始化按钮 -->
+                        <button class="btn bg-info " type="button" id="initGripper" style="color: #ffffff; background-color: #dde0eb; ">夹爪初始化</button>
+                        <!-- 位置设置 -->
+                        <div class="row pt-3">
+                            <div class="col-10 col-xl-10">
+                                <div class="card card-plain h-100">
+                                    <div class="card-header pb-0 p-3">
+                                        <h6 class="mb-0">位置(%)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 col-xl-2">
+                                <div class="input-group input-group-outline my-3 is-filled" style="width: 50%; float: right">
+                                    <label class="form-label">位置</label>
+                                    <input type="text" id="pos_input" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-12">
+                            <div class="input-group col-xs-12">
+                                <input id="pos-slider" name="pos-slider" placeholder="1-100" type="number" min="1" max="100" />
+                            </div>
+                        </div>
+                        <!-- 力设置 -->
+                        <div class="row pt-3">
+                            <div class="col-10 col-xl-10">
+                                <div class="card card-plain h-100">
+                                    <div class="card-header pb-0 p-3">
+                                        <h6 class="mb-0">力(%)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 col-xl-2">
+                                <div class="input-group input-group-outline my-3 is-filled" style="width: 50%; float: right">
+                                    <label class="form-label">力</label>
+                                    <input type="text" class="form-control" id="force_input" onfocus="focused(this)" onfocusout="defocused(this)" value="1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-12">
+                            <div class="input-group col-xs-12">
+                                <input id="force-slider" name="force-slider" placeholder="1-100" type="number" min="1" max="100" />
+                            </div>
+                        </div>
+                        <!-- 速度设置 -->
+                        <div class="row pt-3">
+                            <div class="col-10 col-xl-10">
+                                <div class="card card-plain h-100">
+                                    <div class="card-header pb-0 p-3">
+                                        <h6 class="mb-0">速度(%)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 col-xl-2">
+                                <div class="input-group input-group-outline my-3 is-filled" style="width: 50%; float: right">
+                                    <label class="form-label">速度</label>
+                                    <input type="text" class="form-control" id="speed_input" onfocus="focused(this)" onfocusout="defocused(this)" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-12 form-inline">
+                            <div class="input-group col-xs-12">
+                                <input id="speed-slider" name="speed-slider" placeholder="1-100" type="number" min="1" max="100" />
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+    <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/bubble/jquery.bubble-slider.js"></script>
+
+    <script>
+
+      $(document).ready( function () {
+        var ip = window.location.hostname;
+        var portal = ""
+
+        getConfig().then((config)=>{
+            portal = config.portal
+            // 页面加载时初始化参数的请求
+            console.log(`http://${ip}:${config.portal}/web/gripperStatus`);
+            sendInitPageParametersRequest(config.portal);
+
+        });
+        
+        //changeType 用来控制滑块初始化时不触发请求
+        var changeType = false;
+        var posInput = $("#pos_input"),
+            forceInput = $("#force_input"),
+            speedInput = $("#speed_input");
+    
+        function debounce(func, wait) {
+          let timeout;
+          return function (...args) {
+              clearTimeout(timeout);
+              timeout = setTimeout(() => {
+                  func.apply(this, args);
+              }, wait);
+          };
+        }
+        
+        var forceSlider = $("#force-slider").bubbleSlider({
+          change: debounce(function (event, val) {
+            forceInput.val(val);
+          }, 100) // 100 毫秒的防抖延迟
+        });
+        
+        var speedSlider = $("#speed-slider").bubbleSlider({
+          change: debounce(function (event, val) {
+            speedInput.val(val);
+          }, 100) // 100 毫秒的防抖延迟
+        });
+        
+        var posSlider = $("#pos-slider").bubbleSlider({
+          change: debounce(function (event, val) {
+              posInput.val(val);
+              if(changeType){
+                sendPostRequest();
+              }else{
+                changeType = true
+              }
+          }, 100) // 100 毫秒的防抖延迟
+        });
+
+
+    
+        posInput.change(function () {
+            posSlider.setValue(posInput.val());
+            posSlider.positionThumb(posInput.val());
+        });
+        posInput.blur(function () {
+          sendPostRequest();
+        });
+
+        
+    
+        speedInput.change(function () {
+            speedSlider.setValue(speedInput.val());
+            speedSlider.positionThumb(speedInput.val());
+        });
+    
+        forceInput.change(function () {
+            forceSlider.setValue(forceInput.val());
+            forceSlider.positionThumb(forceInput.val());
+        });
+    
+        // 添加按钮点击事件处理程序
+        $("#initGripper").click(function () {
+            sendInitGripperRequest();
+        });
+    
+    
+        function sendPostRequest() {
+            // 发送滑块值的 POST 请求
+            $.ajax({
+                type: "POST",
+                url: `http://${ip}:${portal}/web/control`,  // 替换为你的后端接口地址
+                data: {
+                    position: posInput.val(),
+                    force: forceInput.val(),
+                    speed: speedInput.val()
+                },
+                success: function (response) {
+                    // 请求成功的处理逻辑
+                    console.log(response);
+                },
+                error: function (error) {
+                    // 请求失败的处理逻辑
+                    console.error(error);
+                }
+            });
+        }
+    
+        function sendInitGripperRequest() {
+            // 发送初始化夹爪的 POST 请求
+            $.ajax({
+                type: "POST",
+                url: `http://${ip}:${portal}/web/initGripper`,  // 替换为初始化夹爪的后端接口地址
+                data: {
+                    // 可以根据需要传递其他参数
+                },
+                success: function (response) {
+                    // 请求成功的处理逻辑
+                    console.log(response);
+                },
+                error: function (error) {
+                    // 请求失败的处理逻辑
+                    console.error(error);
+                }
+            });
+        }
+    
+        function sendInitPageParametersRequest(portal) {
+            console.log(portal)
+            // 页面加载时初始化参数的请求
+            $.ajax({
+                type: "POST",
+                url: `http://${ip}:${portal}/web/gripperStatus`,  // 替换为初始化页面参数的后端接口地址
+                success: function (response) {
+                  console.log(response,"hi");
+
+                    // 处理接收到的初始化参数
+                    // 更新页面上的元素，例如更新滑块、输入框等
+                    posInput.val(response.position);
+                    forceInput.val(response.force);
+                    speedInput.val(response.speed);
+    
+                    // 更新滑块的值和位置
+                    posSlider.setValue(response.position);
+                    posSlider.positionThumb(response.position);
+    
+                    forceSlider.setValue(response.force);
+                    forceSlider.positionThumb(response.force);
+    
+                    speedSlider.setValue(response.speed);
+                    speedSlider.positionThumb(response.speed);
+    
+                    // 请求成功的处理逻辑
+                    console.log(response,"hi");
+                },
+                error: function (error) {
+                    // 请求失败的处理逻辑
+                    console.error(error);
+                }
+            });
+        }
+
+        async function getConfig() {
+          return new Promise((resolve, reject) => {
+            $.get('../../dh_custom_cmd_config.ini', function (data) {
+              var config = {};
+              // 处理INI文件内容
+              var lines = data.split('\n');
+              for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                if (line !== '' && line.indexOf('[') !== 0) {
+                  var parts = line.split('=');
+                  var key = parts[0].trim();
+                  var value = parts[1].trim();
+                  config[key] = value;
+                }
+              }
+              // 现在config对象包含了INI文件中的键值对
+              resolve(config);
+            });
+          });
+        }
+    
+      });
+    
+  </script>
+</body>
+
+</html>

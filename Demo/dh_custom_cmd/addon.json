@@ -1,0 +1,3471 @@
+[
+    {
+        "id": "e740b9b18854b23e",
+        "type": "tab",
+        "label": "AddOn配置服务",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "51a507a3a54d5543",
+        "type": "tab",
+        "label": "夹爪指令块定义",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dc68ae7bd9f8200b",
+        "type": "tab",
+        "label": "夹爪服务",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8b94cbee82175a8d",
+        "type": "tab",
+        "label": "夹爪web服务",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9276b410d6964788",
+        "type": "subflow",
+        "name": "Gripper Command Server",
+        "info": "",
+        "category": "JAKA_AddOn",
+        "in": [],
+        "out": [
+            {
+                "x": 1350,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1340,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 1330,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 1370,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 1370,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 4
+                    }
+                ]
+            },
+            {
+                "x": 1340,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 5
+                    }
+                ]
+            },
+            {
+                "x": 1340,
+                "y": 420,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 6
+                    }
+                ]
+            },
+            {
+                "x": 1360,
+                "y": 480,
+                "wires": [
+                    {
+                        "id": "63768f2e97b991da",
+                        "port": 7
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "outputLabels": [
+            "Initialization",
+            "Control",
+            "Status",
+            "ParameterSetting",
+            "CurrentParameters",
+            "Grasping",
+            "Release",
+            "ErrorHandling"
+        ]
+    },
+    {
+        "id": "727b75a5d11cf5fa",
+        "type": "subflow",
+        "name": "Gripper Command Client",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "34cebbeb98dbd6f5",
+        "type": "subflow",
+        "name": "Griper Command Client",
+        "info": "",
+        "category": "JAKA_AddOn",
+        "in": [
+            {
+                "x": 300,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "ae6dfd94156c17ed"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 840,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "ae6dfd94156c17ed",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "type",
+                "type": "str",
+                "value": "Initialization",
+                "ui": {
+                    "label": {
+                        "zh-CN": "Command Type"
+                    },
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "zh-CN": "Initialization"
+                                },
+                                "v": "Initialization"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "Control"
+                                },
+                                "v": "Control"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "Status"
+                                },
+                                "v": "Status"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "ParameterSetting"
+                                },
+                                "v": "ParameterSetting"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "CurrentParameters"
+                                },
+                                "v": "CurrentParameters"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "Grasping"
+                                },
+                                "v": "Grasping"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "Release"
+                                },
+                                "v": "Release"
+                            },
+                            {
+                                "l": {
+                                    "zh-CN": "ErrorHandling"
+                                },
+                                "v": "ErrorHandling"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "blockTime",
+                "type": "num",
+                "value": "0",
+                "ui": {
+                    "label": {
+                        "zh-CN": "阻塞时间"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5"
+    },
+    {
+        "id": "e4304750a997e2df",
+        "type": "group",
+        "z": "9276b410d6964788",
+        "name": "封装",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "fc983585f765c27a",
+            "63768f2e97b991da",
+            "c8eae49b9f5c21cb",
+            "b0bce8509cd1f5f3"
+        ],
+        "x": 134,
+        "y": 154
+    },
+    {
+        "id": "ba56e0afdc5c5eb3",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "name": "控制柜rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d7d37937bca10daf",
+            "d170f6a074905fec",
+            "ca15befd72da9572",
+            "aa5cdcbd260dcc91",
+            "e476aa70bbb6dbe8",
+            "4e2490f7ad0b9a9f"
+        ],
+        "x": 934,
+        "y": 419,
+        "w": 1072,
+        "h": 142
+    },
+    {
+        "id": "40ff848468bd5660",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "name": "控制柜rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "87e24cb4c9ece15f",
+            "ed52a94db61b8b30",
+            "285154db4e0fa87f",
+            "f3a94f2a4154e764",
+            "4165ccc77b0cc44c",
+            "b13b883aa95187a2",
+            "7c6074a67b2c8648",
+            "c8585be62a651dd6",
+            "93f88490b7cbd23f",
+            "3c992417395ed187"
+        ],
+        "x": 934,
+        "y": 879,
+        "w": 1172,
+        "h": 202
+    },
+    {
+        "id": "fd9740078c297ff8",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "e1298b11013ff5e9",
+            "e822b27ca3a33365",
+            "da2da03736555bed",
+            "36e62d0dbbed817d"
+        ],
+        "x": 934,
+        "y": 1239,
+        "w": 712,
+        "h": 82
+    },
+    {
+        "id": "4a111ab9229c3bb3",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "name": "TIO rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "18849502ccef6e85",
+            "d345d30493a4c8b8",
+            "0f552e1a8835ef37",
+            "db4280e5ed16818c",
+            "650b1d37010fd675",
+            "8a7b2d35b8107052",
+            "fe2deb09c61a9e67"
+        ],
+        "x": 934,
+        "y": 259,
+        "w": 1112,
+        "h": 142
+    },
+    {
+        "id": "2335fa6d902f3cbb",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "name": "TIO rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c4e1eecd33f86d19",
+            "4cd7ba30c5ccf2de",
+            "3bfa9c4c67b02361",
+            "04c174f119646be0",
+            "0c0d44b5ef497465",
+            "8a77e2f01c7c2649",
+            "8c5941bba0ccd7e7",
+            "550f2ac66afecf4b",
+            "596c9f302a21d9c5",
+            "07c59e7888da7959",
+            "9b745762240f1cb0"
+        ],
+        "x": 934,
+        "y": 659,
+        "w": 1172,
+        "h": 202
+    },
+    {
+        "id": "a9862f0aa6b6990d",
+        "type": "group",
+        "z": "dc68ae7bd9f8200b",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "858ed6651a84d7e7",
+            "fc31a9a74d1ed0f7",
+            "2bd232b83341eb72",
+            "f2fbc161e3a51615"
+        ],
+        "x": 934,
+        "y": 1139,
+        "w": 712,
+        "h": 82
+    },
+    {
+        "id": "7f3c28104cbf9a8e",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "name": "控制柜rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "11c212f9874dbc96",
+            "cc51c34fcdde0c2a"
+        ],
+        "x": 914,
+        "y": 319
+    },
+    {
+        "id": "430a2895963b7898",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "738a3488a17163a6",
+            "b96f471270569d0f",
+            "cd699a30a975d0bc",
+            "345133dcfc89d3ca",
+            "e5593a8f37016a9b",
+            "cde4deeab29d67bd"
+        ],
+        "x": 914,
+        "y": 1099
+    },
+    {
+        "id": "42f8e6dca0671ea0",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "name": "TIO rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5a6256565ff1e300"
+        ],
+        "x": 914,
+        "y": 159
+    },
+    {
+        "id": "f723d0204a83c0cf",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "name": "TIO rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "20aa0aabfe8aa776",
+            "79fd674dffdb4799",
+            "7d5dbf936ac4f9be",
+            "09d5924de6546f40",
+            "fa3c13533c90d940",
+            "4ca449aefd707cb6"
+        ],
+        "x": 894,
+        "y": 579
+    },
+    {
+        "id": "e8bb5bbdc4547dc6",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "name": "控制柜rs-485连接",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f729e548769f51bb",
+            "6b07505f67879e99",
+            "a15f2d6cd9dba631",
+            "e05ef95b159fd2d2",
+            "25ef4041ad6bf9fd",
+            "7bbeefdc82e4219a"
+        ],
+        "x": 894,
+        "y": 719
+    },
+    {
+        "id": "e3d919b2d95915af",
+        "type": "group",
+        "z": "8b94cbee82175a8d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "3d7720eb6f9383fd",
+            "77d2fdd64c21402f",
+            "1c5f8f1fdad58b2d",
+            "878264383d440bf4",
+            "fde4efc5584014bf",
+            "d87b393beece9875"
+        ],
+        "x": 914,
+        "y": 939
+    },
+    {
+        "id": "33162a4218b81974",
+        "type": "modbus-client",
+        "name": "DH Gripper",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "172.30.0.43",
+        "tcpPort": "8899",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyS3",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "115200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "fc983585f765c27a",
+        "type": "tcp in",
+        "z": "9276b410d6964788",
+        "g": "e4304750a997e2df",
+        "name": "Gripper Socket Server",
+        "server": "server",
+        "host": "",
+        "port": 10089,
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "",
+        "topic": "",
+        "trim": false,
+        "base64": false,
+        "tls": "",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "c8eae49b9f5c21cb"
+            ]
+        ]
+    },
+    {
+        "id": "63768f2e97b991da",
+        "type": "switch",
+        "z": "9276b410d6964788",
+        "g": "e4304750a997e2df",
+        "name": "",
+        "property": "payload.jaka_gripper_type.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Initialization",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Control",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Status",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ParameterSetting",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "CurrentParameters",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Grasping",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Release",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ErrorHandling",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "Initialization",
+            "Control",
+            "Status",
+            "ParameterSetting",
+            "CurrentParameters",
+            "Grasping",
+            "Release",
+            "ErrorHandling"
+        ]
+    },
+    {
+        "id": "c8eae49b9f5c21cb",
+        "type": "function",
+        "z": "9276b410d6964788",
+        "g": "e4304750a997e2df",
+        "name": "function 2",
+        "func": "\nmsg.payload = JSON.parse(msg.payload)\n\nfor(let i in msg.payload){\n    global.set(i, msg.payload[i].value)\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// 部署节点后，此处添加的代码将运行一次。 \nglobal.set(\"abc\", 12)",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "63768f2e97b991da"
+            ]
+        ]
+    },
+    {
+        "id": "b0bce8509cd1f5f3",
+        "type": "comment",
+        "z": "9276b410d6964788",
+        "g": "e4304750a997e2df",
+        "name": "",
+        "info": "注意：\n修改该TCP In节点名称，\n将导致端口无法写入。\nNote: \nChanging this TCP In node name will \nresult in the port not being written.",
+        "x": 210,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9cbc9651613a11eb",
+        "type": "function",
+        "z": "34cebbeb98dbd6f5",
+        "name": "生成jks",
+        "func": "var varList = []\nfor (let i in msg.payload) {\n    msg.payload[i] = JSON.parse(msg.payload[i])\n    if (msg.payload[i].type == 1) {\n        varList.push(msg.payload[i].value)\n        msg.payload[i].value = \"%f\"\n    }\n}\n\nvarList = varList.reverse()\n\n\nvar data_Json = JSON.stringify(msg.payload)\ndata_Json = data_Json.replaceAll('\"', '\\\\\"')\n\n\nmsg.jks = 'ip = \"127.0.0.1\"\\n'\nmsg.jks += `port = ${global.get(\"socket_port\")}\\n`\nmsg.jks += 'gripper_client = socket_open(ip, port)\\n'\n\n// 如果有变量 进行替换\nif (varList.length > 0) {\n    msg.jks += `var = \"\"\\n`\n    msg.jks += `stringFormat = \"${data_Json}\"\\n`\n    msg.jks += `sprintf(var, stringFormat`\n    varList.forEach(val => {\n        msg.jks += `,${val})`\n    })\n    msg.jks += \"\\n\"\n} else {\n    msg.jks += `var = \"${data_Json}\"\\n`\n}\n\n\nmsg.jks += `socket_send(gripper_client,var)\\n`\nmsg.jks += `socket_recv(gripper_client, 0)\\n`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae6dfd94156c17ed",
+        "type": "function",
+        "z": "34cebbeb98dbd6f5",
+        "name": "生成jks",
+        "func": "// Check if a value of variable type \n// is passed on the instruction block.\n// if so, save the variable name and replace it with %f \nvar varList = []\nfor (let i in msg.payload) {\n    msg.payload[i] = JSON.parse(msg.payload[i])\n    if (msg.payload[i].type == 1) {\n        varList.push(msg.payload[i].value)\n        msg.payload[i].value = \"%f\"\n    }\n}\n// Reverse the order, to be consistent with \n// the order of the data in msg.payload\nvarList = varList.reverse()\n\nlet cmdType = env.get(\"type\")\nmsg.payload['jaka_gripper_type'] = {\"value\":cmdType}\n\n// stringify\nvar data_Json = JSON.stringify(msg.payload)\ndata_Json = data_Json.replaceAll('\"', '\\\\\"')\n\n\nmsg.jks = 'ip = \"127.0.0.1\"\\n'\nmsg.jks += `port = ${global.get(\"socket_port\")}\\n`\nmsg.jks += 'gripper_client = socket_open(ip, port)\\n'\n\n// If there are variables, replace them.\nif (varList.length > 0) {\n    msg.jks += `var = \"\"\\n`\n    msg.jks += `stringFormat = \"${data_Json}\"\\n`\n    msg.jks += `sprintf(var, stringFormat`\n    varList.forEach(val => {\n        msg.jks += `,${val})`\n    })\n    msg.jks += \"\\n\"\n} else {\n    msg.jks += `var = \"${data_Json}\"\\n`\n}\n\n// Passing parameters on a command block \n// passes through the socket\nmsg.jks += `socket_send(gripper_client,var)\\n`\n\nlet blockTime = env.get(\"blockTime\")\n\nmsg.jks += `re = socket_recv(gripper_client, ${blockTime})\\n`\n\nmsg.jks_return = `re`\n\n// let isReturn = env.get(\"isReturn\")\n// if(isReturn){\n// }\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f696342cd06aa20b",
+        "type": "http in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "url": "/set/socket_port",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "cfaa28ac6c8cbd19",
+                "1e74513f73bae1a7"
+            ]
+        ]
+    },
+    {
+        "id": "cfaa28ac6c8cbd19",
+        "type": "debug",
+        "z": "e740b9b18854b23e",
+        "name": "设置Socket端口",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "effecf4e9098a725",
+        "type": "http response",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1200,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4ff29c345dbc88db",
+        "type": "http in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "url": "/get/socket_port",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "c48582c40e7e368e",
+                "38c5ce4f3a9710b4"
+            ]
+        ]
+    },
+    {
+        "id": "0958439ae2113b34",
+        "type": "http response",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1040,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "edbeec9668514cd4",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "获取Socket端口",
+        "func": "let flowObj = JSON.parse(msg.payload)\n\nlet tcpObj = flowObj.find((e) => {\n    if (e[\"name\"] == 'Gripper Socket Server') {\n        return true\n    }\n\n})\n\n\nglobal.set(\"socket_port\", tcpObj.port) \n\nmsg.payload = {\n    socket_port: tcpObj.port\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "0958439ae2113b34"
+            ]
+        ]
+    },
+    {
+        "id": "1e74513f73bae1a7",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "设置Socket 端口全局变量",
+        "func": "global.set('socket_port', Number(msg.payload.port)) \n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "37c5ecc13c36c377"
+            ]
+        ]
+    },
+    {
+        "id": "0c443cabc80ee31f",
+        "type": "inject",
+        "z": "e740b9b18854b23e",
+        "name": "当前socket端口获取",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 440,
+        "wires": [
+            [
+                "c3549a24572203a1"
+            ]
+        ]
+    },
+    {
+        "id": "d23f91e187a9c2f0",
+        "type": "debug",
+        "z": "e740b9b18854b23e",
+        "name": "当前socket端口获取",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "37c5ecc13c36c377",
+        "type": "file in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "filename": "./addon.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "7914e58edc3a0d2f"
+            ]
+        ]
+    },
+    {
+        "id": "7914e58edc3a0d2f",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "function 8",
+        "func": "let flowObj = JSON.parse(msg.payload)\n\nlet tcpObj = flowObj.find((e) => {\n    if (e[\"name\"] == 'Gripper Socket Server'){\n        return true\n    }\n    \n})\ntcpObj.port = global.get('socket_port')\n\n\nmsg.payload = JSON.stringify(flowObj)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 180,
+        "wires": [
+            [
+                "7ad7dab966f45e9d"
+            ]
+        ]
+    },
+    {
+        "id": "7ad7dab966f45e9d",
+        "type": "file",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "filename": "./addon.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            [
+                "effecf4e9098a725"
+            ]
+        ]
+    },
+    {
+        "id": "c48582c40e7e368e",
+        "type": "file in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "filename": "./addon.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "edbeec9668514cd4"
+            ]
+        ]
+    },
+    {
+        "id": "a6f70b2049695b98",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "获取Socket端口",
+        "func": "let flowObj = JSON.parse(msg.payload)\n\nlet tcpObj = flowObj.find((e) => {\n    if (e[\"name\"] == 'Gripper Socket Server') {\n        return true\n    }\n\n})\n\n\nglobal.set(\"socket_port\", tcpObj.port) \n\nmsg.payload = {\n    socket_port: tcpObj.port\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 440,
+        "wires": [
+            [
+                "d23f91e187a9c2f0"
+            ]
+        ]
+    },
+    {
+        "id": "c3549a24572203a1",
+        "type": "file in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "filename": "./addon.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 440,
+        "wires": [
+            [
+                "a6f70b2049695b98"
+            ]
+        ]
+    },
+    {
+        "id": "38c5ce4f3a9710b4",
+        "type": "debug",
+        "z": "e740b9b18854b23e",
+        "name": "获取Socket端口",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b74283dcd6dfb3c5",
+        "type": "http in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "url": "/set/modbus_type",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 640,
+        "wires": [
+            [
+                "2d66a5ab6713892c",
+                "e6dd1653140dce0c"
+            ]
+        ]
+    },
+    {
+        "id": "2d66a5ab6713892c",
+        "type": "debug",
+        "z": "e740b9b18854b23e",
+        "name": "设置modbud类型",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "43f13e24b17a6864",
+        "type": "http response",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 900,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ed2db3ef3f3495bd",
+        "type": "http in",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "url": "/get/modbus_type",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 800,
+        "wires": [
+            [
+                "73c7489c95430161",
+                "4029c7b54d72e5c2"
+            ]
+        ]
+    },
+    {
+        "id": "9a7bfd51ef95e776",
+        "type": "http response",
+        "z": "e740b9b18854b23e",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 880,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "4029c7b54d72e5c2",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "获取modbud类型",
+        "func": "\nmsg.payload = {\n    modbus_type: global.get(\"modbus_type\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 800,
+        "wires": [
+            [
+                "9a7bfd51ef95e776"
+            ]
+        ]
+    },
+    {
+        "id": "e6dd1653140dce0c",
+        "type": "function",
+        "z": "e740b9b18854b23e",
+        "name": "设置modbud类型全局变量",
+        "func": "global.set('modbus_type', msg.payload.modbus_type) \n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// 部署节点后，此处添加的代码将运行一次。 \nglobal.set('modbus_type',\"tio\") ",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 640,
+        "wires": [
+            [
+                "43f13e24b17a6864"
+            ]
+        ]
+    },
+    {
+        "id": "73c7489c95430161",
+        "type": "debug",
+        "z": "e740b9b18854b23e",
+        "name": "获取modbud类型",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b390577e56d2cd74",
+        "type": "http in",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "url": "Control",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "e1446b1f3c40b9e3"
+            ]
+        ]
+    },
+    {
+        "id": "af01c02eef61a374",
+        "type": "http response",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5c0b1360be1979c8",
+        "type": "Customized-commands",
+        "z": "51a507a3a54d5543",
+        "name": "\"Initialization\"",
+        "url": "5c0b1360be1979c8",
+        "template": "<p>{{ msg }}</p>",
+        "JAKA_FORM_DATA": "{\"workspace\":null,\"nodeName\":\"\",\"flowId\":\"51a507a3a54d5543\",\"nodeId\":\"5c0b1360be1979c8\",\"codeUrl\":\"connected_robot/Initialization\",\"pageUrl\":\"\",\"blockName\":\"Initialization\",\"blockType\":\"block\",\"blockColor\":\"yellow\",\"blockLang\":\"ja\",\"isInEdit\":false,\"typeList\":[{\"label\":\"文本\",\"value\":\"Text\"},{\"label\":\"布尔值（条件框）\",\"value\":\"Boolean\"},{\"label\":\"字符串（输入框）\",\"value\":\"String\"},{\"label\":\"数字（输入框）\",\"value\":\"Number\"},{\"label\":\"数组（输入框）\",\"value\":\"Array\"},{\"label\":\"下拉框\",\"value\":\"Select\"},{\"label\":\"指令块\",\"value\":\"statement\"}],\"blockData\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"初始化夹爪\",\"en\":\"Initialisation\",\"ja\":\"初期化\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"initMode\",\"type\":\"Select\",\"value\":{\"zh\":\"回零位,重新标定\",\"en\":\"Return to zero, recalibrate\",\"ja\":\"ゼロに戻し,再校正する\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"型号\",\"en\":\"Model\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_17\"}],\"sourceList\":[{\"label\":\"无\",\"value\":\"None\"},{\"label\":\"变量\",\"value\":\"Variable\"},{\"label\":\"IO\",\"value\":\"IO\"},{\"label\":\"程序\",\"value\":\"Program\"}],\"dataKeep\":{\"block\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"初始化夹爪\",\"en\":\"Initialisation\",\"ja\":\"初期化\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"initMode\",\"type\":\"Select\",\"value\":{\"zh\":\"回零位,重新标定\",\"en\":\"Return to zero, recalibrate\",\"ja\":\"ゼロに戻し,再校正する\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"型号\",\"en\":\"Model\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_17\"}],\"boolean\":null,\"string\":null,\"number\":null,\"array\":null,\"point\":null},\"dataToApp\":{\"initJson\":{\"type\":\"85b8d430ba24794530cf0d73cad34eb8_dh_custom_cmd@Initialization\",\"message0\":\"%1 %2\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Initialization\",\"disabled\":false},{\"type\":\"field_dropdown\",\"name\":\"initMode\",\"options\":[[\"initMode@dh_custom_cmd@Initialization0\",\"0\"],[\"initMode@dh_custom_cmd@Initialization1\",\"1\"]]}],\"colour\":\"#FFBF00\",\"previousStatement\":null,\"nextStatement\":null},\"xml\":\"<block type=\\\"85b8d430ba24794530cf0d73cad34eb8_dh_custom_cmd@Initialization\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Initialization</field><field name=\\\"initMode\\\">0</field></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"Initialisation\",\"initMode@dh_custom_cmd@Initialization0\":\"Return to zero\",\"initMode@dh_custom_cmd@Initialization1\":\" recalibrate\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"初始化夹爪\",\"initMode@dh_custom_cmd@Initialization0\":\"回零位\",\"initMode@dh_custom_cmd@Initialization1\":\"重新标定\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"初期化\",\"initMode@dh_custom_cmd@Initialization0\":\"回零位\",\"initMode@dh_custom_cmd@Initialization1\":\"重新标定\"}}}}",
+        "JAKA_BLOCK_DATA": "{\"initJson\":{\"type\":\"85b8d430ba24794530cf0d73cad34eb8_dh_custom_cmd@Initialization\",\"message0\":\"%1 %2\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Initialization\",\"disabled\":false},{\"type\":\"field_dropdown\",\"name\":\"initMode\",\"options\":[[\"initMode@dh_custom_cmd@Initialization0\",\"0\"],[\"initMode@dh_custom_cmd@Initialization1\",\"1\"]]}],\"colour\":\"#FFBF00\",\"previousStatement\":null,\"nextStatement\":null},\"xml\":\"<block type=\\\"85b8d430ba24794530cf0d73cad34eb8_dh_custom_cmd@Initialization\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Initialization</field><field name=\\\"initMode\\\">0</field></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"Initialisation\",\"initMode@dh_custom_cmd@Initialization0\":\"Return to zero\",\"initMode@dh_custom_cmd@Initialization1\":\" recalibrate\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"初始化夹爪\",\"initMode@dh_custom_cmd@Initialization0\":\"回零位\",\"initMode@dh_custom_cmd@Initialization1\":\"重新标定\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Initialization\":\"初期化\",\"initMode@dh_custom_cmd@Initialization0\":\"回零位\",\"initMode@dh_custom_cmd@Initialization1\":\"重新标定\"}}}",
+        "JAKA_SCRIPT_DATA": "{\"templateCode\":{\"jks_1\":\"\"},\"jksCode\":\"ip = \\\"127.0.0.1\\\"\\nport = \\\"50052\\\"\\ngripper_client = socket_open(ip, port)\\nsocket_send(sockid, 0)\\n\",\"genMethond\":\"function\"}",
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "af01c02eef61a374"
+            ]
+        ]
+    },
+    {
+        "id": "df86f1f347a68c14",
+        "type": "http in",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "url": "Initialization",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 140,
+        "wires": [
+            [
+                "8f1f8d9e6cae7b8c"
+            ]
+        ]
+    },
+    {
+        "id": "0accaf65f12430f6",
+        "type": "http response",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 910,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9882cc42285fcf1f",
+        "type": "Customized-commands",
+        "z": "51a507a3a54d5543",
+        "name": "\"Control\"",
+        "url": "9882cc42285fcf1f",
+        "template": "<p>{{ msg }}</p>",
+        "JAKA_FORM_DATA": "{\"workspace\":null,\"nodeName\":\"\",\"flowId\":\"51a507a3a54d5543\",\"nodeId\":\"9882cc42285fcf1f\",\"codeUrl\":\"connected_robot/Control\",\"pageUrl\":\"\",\"blockName\":\"Control\",\"blockType\":\"block\",\"blockColor\":\"yellow\",\"blockLang\":\"zh\",\"isInEdit\":false,\"typeList\":[{\"label\":\"文本\",\"value\":\"Text\"},{\"label\":\"布尔值（条件框）\",\"value\":\"Boolean\"},{\"label\":\"字符串（输入框）\",\"value\":\"String\"},{\"label\":\"数字（输入框）\",\"value\":\"Number\"},{\"label\":\"数组（输入框）\",\"value\":\"Array\"},{\"label\":\"下拉框\",\"value\":\"Select\"},{\"label\":\"指令块\",\"value\":\"statement\"}],\"blockData\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"大寰夹爪控制\",\"en\":\"DH_Control\",\"ja\":\"顎のコントロール\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"Param_3mta\",\"type\":\"Text\",\"value\":{\"zh\":\"位置\",\"en\":\"position\",\"ja\":\"プレースメント\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_mta\"},{\"index\":\"3\",\"name\":\"pos\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_sse\"},{\"index\":\"4\",\"name\":\"Param_49ak\",\"type\":\"Text\",\"value\":{\"zh\":\"速度\",\"en\":\"speed\",\"ja\":\"テンポ\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_9ak\"},{\"index\":\"5\",\"name\":\"speed\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_om3\"},{\"index\":\"6\",\"name\":\"Param_5xlz\",\"type\":\"Text\",\"value\":{\"zh\":\"力度\",\"en\":\"force\",\"ja\":\"ダイナミズム\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_xlz\"},{\"index\":\"7\",\"name\":\"force\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_l89\"}],\"sourceList\":[{\"label\":\"无\",\"value\":\"None\"},{\"label\":\"变量\",\"value\":\"Variable\"},{\"label\":\"IO\",\"value\":\"IO\"},{\"label\":\"程序\",\"value\":\"Program\"}],\"dataKeep\":{\"block\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"大寰夹爪控制\",\"en\":\"DH_Control\",\"ja\":\"顎のコントロール\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"Param_3mta\",\"type\":\"Text\",\"value\":{\"zh\":\"位置\",\"en\":\"position\",\"ja\":\"プレースメント\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_mta\"},{\"index\":\"3\",\"name\":\"pos\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_sse\"},{\"index\":\"4\",\"name\":\"Param_49ak\",\"type\":\"Text\",\"value\":{\"zh\":\"速度\",\"en\":\"speed\",\"ja\":\"テンポ\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_9ak\"},{\"index\":\"5\",\"name\":\"speed\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_om3\"},{\"index\":\"6\",\"name\":\"Param_5xlz\",\"type\":\"Text\",\"value\":{\"zh\":\"力度\",\"en\":\"force\",\"ja\":\"ダイナミズム\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_xlz\"},{\"index\":\"7\",\"name\":\"force\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_l89\"}],\"boolean\":null,\"string\":null,\"number\":null,\"array\":null,\"point\":null},\"dataToApp\":{\"initJson\":{\"type\":\"d47d58df65991dc55f5187d5c269f602_dh_custom_cmd@Control\",\"message0\":\"%1 %2 %3 %4 %5 %6 %7\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_3mta\",\"text\":\"Param_3mta@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"pos\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_49ak\",\"text\":\"Param_49ak@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"speed\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_5xlz\",\"text\":\"Param_5xlz@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"force\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false}],\"colour\":\"#FFBF00\",\"previousStatement\":null,\"nextStatement\":null},\"xml\":\"<block type=\\\"d47d58df65991dc55f5187d5c269f602_dh_custom_cmd@Control\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Control</field><field name=\\\"Param_3mta\\\" disabled = \\\"false\\\" >#Param_3mta@dh_custom_cmd@Control</field><value name=\\\"pos\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value><field name=\\\"Param_49ak\\\" disabled = \\\"false\\\" >#Param_49ak@dh_custom_cmd@Control</field><value name=\\\"speed\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value><field name=\\\"Param_5xlz\\\" disabled = \\\"false\\\" >#Param_5xlz@dh_custom_cmd@Control</field><value name=\\\"force\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"DH_Control\",\"Param_3mta@dh_custom_cmd@Control\":\"position\",\"Param_49ak@dh_custom_cmd@Control\":\"speed\",\"Param_5xlz@dh_custom_cmd@Control\":\"force\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"大寰夹爪控制\",\"Param_3mta@dh_custom_cmd@Control\":\"位置\",\"Param_49ak@dh_custom_cmd@Control\":\"速度\",\"Param_5xlz@dh_custom_cmd@Control\":\"力度\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"顎のコントロール\",\"Param_3mta@dh_custom_cmd@Control\":\"プレースメント\",\"Param_49ak@dh_custom_cmd@Control\":\"テンポ\",\"Param_5xlz@dh_custom_cmd@Control\":\"ダイナミズム\"}}}}",
+        "JAKA_BLOCK_DATA": "{\"initJson\":{\"type\":\"d47d58df65991dc55f5187d5c269f602_dh_custom_cmd@Control\",\"message0\":\"%1 %2 %3 %4 %5 %6 %7\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_3mta\",\"text\":\"Param_3mta@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"pos\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_49ak\",\"text\":\"Param_49ak@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"speed\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false},{\"type\":\"field_label\",\"name\":\"Param_5xlz\",\"text\":\"Param_5xlz@dh_custom_cmd@Control\",\"disabled\":false},{\"type\":\"input_value\",\"name\":\"force\",\"text\":\"\",\"check\":\"Number\",\"disabled\":false}],\"colour\":\"#FFBF00\",\"previousStatement\":null,\"nextStatement\":null},\"xml\":\"<block type=\\\"d47d58df65991dc55f5187d5c269f602_dh_custom_cmd@Control\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Control</field><field name=\\\"Param_3mta\\\" disabled = \\\"false\\\" >#Param_3mta@dh_custom_cmd@Control</field><value name=\\\"pos\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value><field name=\\\"Param_49ak\\\" disabled = \\\"false\\\" >#Param_49ak@dh_custom_cmd@Control</field><value name=\\\"speed\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value><field name=\\\"Param_5xlz\\\" disabled = \\\"false\\\" >#Param_5xlz@dh_custom_cmd@Control</field><value name=\\\"force\\\" disabled = \\\"false\\\" ><shadow type=\\\"math_number\\\" disabled = \\\"false\\\" ><field name=\\\"NUM\\\"></field></shadow></value></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"DH_Control\",\"Param_3mta@dh_custom_cmd@Control\":\"position\",\"Param_49ak@dh_custom_cmd@Control\":\"speed\",\"Param_5xlz@dh_custom_cmd@Control\":\"force\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"大寰夹爪控制\",\"Param_3mta@dh_custom_cmd@Control\":\"位置\",\"Param_49ak@dh_custom_cmd@Control\":\"速度\",\"Param_5xlz@dh_custom_cmd@Control\":\"力度\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Control\":\"顎のコントロール\",\"Param_3mta@dh_custom_cmd@Control\":\"プレースメント\",\"Param_49ak@dh_custom_cmd@Control\":\"テンポ\",\"Param_5xlz@dh_custom_cmd@Control\":\"ダイナミズム\"}}}",
+        "JAKA_SCRIPT_DATA": "{\"templateCode\":{\"jks_1\":\"\"},\"jksCode\":\"ip = \\\"127.0.0.1\\\"\\nport = \\\"50052\\\"\\ngripper_client = socket_open(ip, port)\\nsocket_send(sockid, 0)\\n\",\"genMethond\":\"function\"}",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "0accaf65f12430f6"
+            ]
+        ]
+    },
+    {
+        "id": "0cc354c6fc396863",
+        "type": "http in",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "url": "Status",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "5c8c69e9ecee3071"
+            ]
+        ]
+    },
+    {
+        "id": "b908834e1ba5a23c",
+        "type": "http response",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 910,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e37ceb0940365ebe",
+        "type": "Customized-commands",
+        "z": "51a507a3a54d5543",
+        "name": "\"Status\"",
+        "url": "e37ceb0940365ebe",
+        "template": "<p>{{ msg }}</p>",
+        "JAKA_FORM_DATA": "{\"workspace\":null,\"nodeName\":\"\",\"flowId\":\"51a507a3a54d5543\",\"nodeId\":\"e37ceb0940365ebe\",\"codeUrl\":\"connected_robot/Status\",\"pageUrl\":\"\",\"blockName\":\"Status\",\"blockType\":\"string\",\"blockColor\":\"yellow\",\"blockLang\":\"zh\",\"isInEdit\":false,\"typeList\":[{\"label\":\"文本\",\"value\":\"Text\"},{\"label\":\"布尔值（条件框）\",\"value\":\"Boolean\"},{\"label\":\"字符串（输入框）\",\"value\":\"String\"},{\"label\":\"数字（输入框）\",\"value\":\"Number\"},{\"label\":\"数组（输入框）\",\"value\":\"Array\"},{\"label\":\"下拉框\",\"value\":\"Select\"}],\"blockData\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"获取夹爪\",\"en\":\"Get gripper\",\"ja\":\"ジョーの状態\"},\"source\":\"None\",\"pageShow\":false,\"alias\":\"\",\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"statusType\",\"type\":\"Select\",\"value\":{\"zh\":\"初始化,夹持,位置\",\"en\":\"Initialisation, clamping , position\",\"ja\":\"イニシャライズ、トング、ロケーション\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_plq\"},{\"index\":\"3\",\"name\":\"Param_3dbt\",\"type\":\"Text\",\"value\":{\"zh\":\"状态\",\"en\":\"status\",\"ja\":\"を知る\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_dbt\"}],\"sourceList\":[{\"label\":\"无\",\"value\":\"None\"},{\"label\":\"变量\",\"value\":\"Variable\"},{\"label\":\"IO\",\"value\":\"IO\"},{\"label\":\"程序\",\"value\":\"Program\"}],\"dataKeep\":{\"block\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"大寰夹爪控制\",\"en\":\"DH_Control\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"Param_3mta\",\"type\":\"Text\",\"value\":{\"zh\":\"位置\",\"en\":\"position\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_mta\"},{\"index\":\"3\",\"name\":\"pos\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_sse\"},{\"index\":\"4\",\"name\":\"Param_49ak\",\"type\":\"Text\",\"value\":{\"zh\":\"速度\",\"en\":\"speed\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_9ak\"},{\"index\":\"5\",\"name\":\"speed\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_om3\"},{\"index\":\"6\",\"name\":\"Param_5xlz\",\"type\":\"Text\",\"value\":{\"zh\":\"力度\",\"en\":\"force\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_xlz\"},{\"index\":\"7\",\"name\":\"force\",\"type\":\"Number\",\"value\":\"\",\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_l89\"},{\"index\":\"8\",\"name\":\"type\",\"type\":\"String\",\"value\":{\"zh\":\"\",\"en\":\"Gripper_control\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":true,\"_X_ROW_KEY\":\"row_hvb\"}],\"boolean\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"抓取检查\",\"en\":\"\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":\"\",\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"type\",\"type\":\"String\",\"value\":{\"zh\":\"\",\"en\":\"gripper_detect\",\"ja\":\"\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":true,\"_X_ROW_KEY\":\"row_lov\"}],\"string\":[{\"index\":\"1\",\"name\":\"Text1\",\"type\":\"Text\",\"value\":{\"zh\":\"获取夹爪\",\"en\":\"Get gripper\",\"ja\":\"ジョーの状態\"},\"source\":\"None\",\"pageShow\":false,\"alias\":\"\",\"disabled\":false,\"_X_ROW_KEY\":\"row_15\"},{\"index\":\"2\",\"name\":\"statusType\",\"type\":\"Select\",\"value\":{\"zh\":\"初始化,夹持,位置\",\"en\":\"Initialisation, clamping , position\",\"ja\":\"イニシャライズ、トング、ロケーション\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_plq\"},{\"index\":\"3\",\"name\":\"Param_3dbt\",\"type\":\"Text\",\"value\":{\"zh\":\"状态\",\"en\":\"status\",\"ja\":\"を知る\"},\"source\":\"None\",\"pageShow\":false,\"alias\":{\"zh\":\"\",\"en\":\"\",\"ja\":\"\"},\"disabled\":false,\"_X_ROW_KEY\":\"row_dbt\"}],\"number\":null,\"array\":null,\"point\":null},\"dataToApp\":{\"initJson\":{\"type\":\"be50ac2a6a8c2b700275f607c18d8775_dh_custom_cmd@Status\",\"message0\":\"%1 %2 %3\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Status\",\"disabled\":false},{\"type\":\"field_dropdown\",\"name\":\"statusType\",\"options\":[[\"statusType@dh_custom_cmd@Status0\",\"0\"],[\"statusType@dh_custom_cmd@Status1\",\"1\"],[\"statusType@dh_custom_cmd@Status2\",\"2\"]]},{\"type\":\"field_label\",\"name\":\"Param_3dbt\",\"text\":\"Param_3dbt@dh_custom_cmd@Status\",\"disabled\":false}],\"colour\":\"#FFBF00\",\"extensions\":[\"output_string\"]},\"xml\":\"<block type=\\\"be50ac2a6a8c2b700275f607c18d8775_dh_custom_cmd@Status\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Status</field><field name=\\\"statusType\\\">0</field><field name=\\\"Param_3dbt\\\" disabled = \\\"false\\\" >#Param_3dbt@dh_custom_cmd@Status</field></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"Get gripper\",\"statusType@dh_custom_cmd@Status0\":\"Initialisation\",\"statusType@dh_custom_cmd@Status1\":\" clamping \",\"statusType@dh_custom_cmd@Status2\":\" position\",\"Param_3dbt@dh_custom_cmd@Status\":\"status\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"获取夹爪\",\"statusType@dh_custom_cmd@Status0\":\"初始化\",\"statusType@dh_custom_cmd@Status1\":\"夹持\",\"statusType@dh_custom_cmd@Status2\":\"位置\",\"Param_3dbt@dh_custom_cmd@Status\":\"状态\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"ジョーの状態\",\"statusType@dh_custom_cmd@Status0\":\"初始化\",\"statusType@dh_custom_cmd@Status1\":\"夹持\",\"statusType@dh_custom_cmd@Status2\":\"位置\",\"Param_3dbt@dh_custom_cmd@Status\":\"を知る\"}}}}",
+        "JAKA_BLOCK_DATA": "{\"initJson\":{\"type\":\"be50ac2a6a8c2b700275f607c18d8775_dh_custom_cmd@Status\",\"message0\":\"%1 %2 %3\",\"args0\":[{\"type\":\"field_label\",\"name\":\"Text1\",\"text\":\"Text1@dh_custom_cmd@Status\",\"disabled\":false},{\"type\":\"field_dropdown\",\"name\":\"statusType\",\"options\":[[\"statusType@dh_custom_cmd@Status0\",\"0\"],[\"statusType@dh_custom_cmd@Status1\",\"1\"],[\"statusType@dh_custom_cmd@Status2\",\"2\"]]},{\"type\":\"field_label\",\"name\":\"Param_3dbt\",\"text\":\"Param_3dbt@dh_custom_cmd@Status\",\"disabled\":false}],\"colour\":\"#FFBF00\",\"extensions\":[\"output_string\"]},\"xml\":\"<block type=\\\"be50ac2a6a8c2b700275f607c18d8775_dh_custom_cmd@Status\\\" x=\\\"20\\\" y=\\\"100\\\" ><field name=\\\"Text1\\\" disabled = \\\"false\\\" >#Text1@dh_custom_cmd@Status</field><field name=\\\"statusType\\\">0</field><field name=\\\"Param_3dbt\\\" disabled = \\\"false\\\" >#Param_3dbt@dh_custom_cmd@Status</field></block>\",\"message\":{\"en\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"Get gripper\",\"statusType@dh_custom_cmd@Status0\":\"Initialisation\",\"statusType@dh_custom_cmd@Status1\":\" clamping \",\"statusType@dh_custom_cmd@Status2\":\" position\",\"Param_3dbt@dh_custom_cmd@Status\":\"status\"},\"zh\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"获取夹爪\",\"statusType@dh_custom_cmd@Status0\":\"初始化\",\"statusType@dh_custom_cmd@Status1\":\"夹持\",\"statusType@dh_custom_cmd@Status2\":\"位置\",\"Param_3dbt@dh_custom_cmd@Status\":\"状态\"},\"ja\":{\"Bool_False\":\"False\",\"Array_\":\" \",\"Text1@dh_custom_cmd@Status\":\"ジョーの状態\",\"statusType@dh_custom_cmd@Status0\":\"初始化\",\"statusType@dh_custom_cmd@Status1\":\"夹持\",\"statusType@dh_custom_cmd@Status2\":\"位置\",\"Param_3dbt@dh_custom_cmd@Status\":\"を知る\"}}}",
+        "JAKA_SCRIPT_DATA": "{\"templateCode\":{\"jks_1\":\"\"},\"jksCode\":\"ip = \\\"127.0.0.1\\\"\\nport = \\\"50052\\\"\\ngripper_client = socket_open(ip, port)\\nsocket_send(sockid, 0)\\n\",\"genMethond\":\"function\"}",
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "b908834e1ba5a23c"
+            ]
+        ]
+    },
+    {
+        "id": "8f1f8d9e6cae7b8c",
+        "type": "subflow:34cebbeb98dbd6f5",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "x": 440,
+        "y": 140,
+        "wires": [
+            [
+                "5c0b1360be1979c8"
+            ]
+        ]
+    },
+    {
+        "id": "e1446b1f3c40b9e3",
+        "type": "subflow:34cebbeb98dbd6f5",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "env": [
+            {
+                "name": "type",
+                "value": "Control",
+                "type": "str"
+            }
+        ],
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "9882cc42285fcf1f"
+            ]
+        ]
+    },
+    {
+        "id": "5c8c69e9ecee3071",
+        "type": "subflow:34cebbeb98dbd6f5",
+        "z": "51a507a3a54d5543",
+        "name": "",
+        "env": [
+            {
+                "name": "type",
+                "value": "Status",
+                "type": "str"
+            }
+        ],
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "e37ceb0940365ebe"
+            ]
+        ]
+    },
+    {
+        "id": "87e24cb4c9ece15f",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "夹爪位置数据",
+        "func": "// 获取速度值\nlet posVal = Number(global.get(\"pos\")) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1040,
+        "wires": [
+            [
+                "ed52a94db61b8b30"
+            ]
+        ]
+    },
+    {
+        "id": "ed52a94db61b8b30",
+        "type": "modbus-flex-write",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "设置位置",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1240,
+        "y": 1040,
+        "wires": [
+            [
+                "b13b883aa95187a2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d7d37937bca10daf",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 1930,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d170f6a074905fec",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "初始化成功判断",
+        "func": "\nif (msg.payload[0] != 1) {\n    msg.payload = \"\"\n    return [msg, null];\n}\nelse{\n    return [null,msg];\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 520,
+        "wires": [
+            [
+                "ca15befd72da9572"
+            ],
+            [
+                "d7d37937bca10daf"
+            ]
+        ]
+    },
+    {
+        "id": "ca15befd72da9572",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1620,
+        "y": 460,
+        "wires": [
+            [
+                "aa5cdcbd260dcc91"
+            ]
+        ]
+    },
+    {
+        "id": "aa5cdcbd260dcc91",
+        "type": "modbus-getter",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "获取夹爪初始化状态",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "512",
+        "quantity": "1",
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1480,
+        "y": 520,
+        "wires": [
+            [
+                "d170f6a074905fec"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e1298b11013ff5e9",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "fd9740078c297ff8",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 1570,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "31c546c620dbd114",
+        "type": "subflow:9276b410d6964788",
+        "z": "dc68ae7bd9f8200b",
+        "name": "",
+        "x": 210,
+        "y": 1020,
+        "wires": [
+            [
+                "9302052bfc447933"
+            ],
+            [
+                "d5cce4676384fa2c"
+            ],
+            [
+                "2e58e74e6fcd4bf4"
+            ],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e476aa70bbb6dbe8",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "夹爪初始化数据",
+        "func": "const initMode = global.get(\"initMode\")\n\nif (initMode == \"0\"){\n    var val = 1\n}else{\n    var val = 165\n}\n\nmsg.payload = {\n    'value': val,\n    'fc': 6,\n    'unitid': 1,\n    'address': 256,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            [
+                "4e2490f7ad0b9a9f"
+            ]
+        ]
+    },
+    {
+        "id": "4e2490f7ad0b9a9f",
+        "type": "modbus-flex-write",
+        "z": "dc68ae7bd9f8200b",
+        "g": "ba56e0afdc5c5eb3",
+        "name": "夹爪初始化",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1210,
+        "y": 520,
+        "wires": [
+            [
+                "aa5cdcbd260dcc91"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6c6ee57193bd5e60",
+        "type": "modbus-flex-getter",
+        "z": "dc68ae7bd9f8200b",
+        "name": "获取夹爪状态",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 740,
+        "y": 1560,
+        "wires": [
+            [
+                "cb32da548b958f02"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "77ecf67b113f2184",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "name": "夹爪控制数据",
+        "func": "\nmsg.payload = {\n    'fc': 3,\n    'unitid': 1,\n    'address': 512,\n    'quantity': 3\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1560,
+        "wires": [
+            [
+                "6c6ee57193bd5e60"
+            ]
+        ]
+    },
+    {
+        "id": "cb32da548b958f02",
+        "type": "debug",
+        "z": "dc68ae7bd9f8200b",
+        "name": "获取夹爪状态测试",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "b747a3c41e4136c2",
+        "type": "inject",
+        "z": "dc68ae7bd9f8200b",
+        "name": "测试用例1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 1560,
+        "wires": [
+            [
+                "77ecf67b113f2184"
+            ]
+        ]
+    },
+    {
+        "id": "285154db4e0fa87f",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 2030,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "f3a94f2a4154e764",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "运动状态判断",
+        "func": "\nif (msg.payload[0] == 0) {\n    msg.payload = \"\"\n    return [msg, null];\n}\nelse{\n    return [null,msg];\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1820,
+        "y": 980,
+        "wires": [
+            [
+                "4165ccc77b0cc44c"
+            ],
+            [
+                "285154db4e0fa87f"
+            ]
+        ]
+    },
+    {
+        "id": "4165ccc77b0cc44c",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1720,
+        "y": 920,
+        "wires": [
+            [
+                "b13b883aa95187a2"
+            ]
+        ]
+    },
+    {
+        "id": "b13b883aa95187a2",
+        "type": "modbus-getter",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "获取夹爪运动状态",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "513",
+        "quantity": "1",
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1590,
+        "y": 980,
+        "wires": [
+            [
+                "f3a94f2a4154e764"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7c6074a67b2c8648",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "夹爪力数据",
+        "func": "let forceVal = Number(global.get(\"force\"))\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 920,
+        "wires": [
+            [
+                "c8585be62a651dd6"
+            ]
+        ]
+    },
+    {
+        "id": "c8585be62a651dd6",
+        "type": "modbus-flex-write",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "设置力度",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1240,
+        "y": 920,
+        "wires": [
+            [
+                "93f88490b7cbd23f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "93f88490b7cbd23f",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "夹爪速度数据",
+        "func": "// 获取速度值\nlet speedVal = Number(global.get(\"speed\"))\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 980,
+        "wires": [
+            [
+                "3c992417395ed187"
+            ]
+        ]
+    },
+    {
+        "id": "3c992417395ed187",
+        "type": "modbus-flex-write",
+        "z": "dc68ae7bd9f8200b",
+        "g": "40ff848468bd5660",
+        "name": "设置速度",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1240,
+        "y": 980,
+        "wires": [
+            [
+                "87e24cb4c9ece15f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e822b27ca3a33365",
+        "type": "modbus-flex-getter",
+        "z": "dc68ae7bd9f8200b",
+        "g": "fd9740078c297ff8",
+        "name": "获取夹爪状态",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1240,
+        "y": 1280,
+        "wires": [
+            [
+                "36e62d0dbbed817d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "da2da03736555bed",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "fd9740078c297ff8",
+        "name": "夹爪状态数据",
+        "func": "let statusType = global.get(\"statusType\")\n\nlet statusAddress = {\n    \"0\": 512,\n    \"1\": 513,\n    \"2\": 514,\n}\n\nmsg.payload = {\n    'fc': 3,\n    'unitid': 1,\n    'address': statusAddress[statusType],\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1280,
+        "wires": [
+            [
+                "e822b27ca3a33365"
+            ]
+        ]
+    },
+    {
+        "id": "9302052bfc447933",
+        "type": "switch",
+        "z": "dc68ae7bd9f8200b",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "d345d30493a4c8b8"
+            ],
+            [
+                "e476aa70bbb6dbe8"
+            ]
+        ]
+    },
+    {
+        "id": "18849502ccef6e85",
+        "type": "Set-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "发送初始化",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1210,
+        "y": 360,
+        "wires": [
+            [
+                "fe2deb09c61a9e67"
+            ]
+        ]
+    },
+    {
+        "id": "d345d30493a4c8b8",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "初始化报文",
+        "func": "const initMode = global.get(\"initMode\")\n\nif (initMode == \"0\"){\n    msg.payload.cmdData = \"01 06 01 00 00 01\"\n}else{\n    msg.payload.cmdData = \"01 06 01 00 00 A5\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 360,
+        "wires": [
+            [
+                "18849502ccef6e85"
+            ]
+        ]
+    },
+    {
+        "id": "0f552e1a8835ef37",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1660,
+        "y": 300,
+        "wires": [
+            [
+                "8a7b2d35b8107052"
+            ]
+        ]
+    },
+    {
+        "id": "db4280e5ed16818c",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "初始化成功判断",
+        "func": "\nif (msg.payload != 1) {\n    msg.payload = \"\"\n    return [msg, null];\n}\nelse{\n    return [null,msg];\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1800,
+        "y": 360,
+        "wires": [
+            [
+                "0f552e1a8835ef37"
+            ],
+            [
+                "650b1d37010fd675"
+            ]
+        ]
+    },
+    {
+        "id": "650b1d37010fd675",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 1970,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8a7b2d35b8107052",
+        "type": "Get-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "获取初始化状态信号量",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "status_init",
+        "x": 1600,
+        "y": 360,
+        "wires": [
+            [
+                "db4280e5ed16818c"
+            ]
+        ]
+    },
+    {
+        "id": "fe2deb09c61a9e67",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "4a111ab9229c3bb3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1400,
+        "y": 360,
+        "wires": [
+            [
+                "8a7b2d35b8107052"
+            ]
+        ]
+    },
+    {
+        "id": "d5cce4676384fa2c",
+        "type": "switch",
+        "z": "dc68ae7bd9f8200b",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 860,
+        "wires": [
+            [
+                "04c174f119646be0"
+            ],
+            [
+                "7c6074a67b2c8648"
+            ]
+        ]
+    },
+    {
+        "id": "c4e1eecd33f86d19",
+        "type": "Set-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "设置夹爪力报文",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1240,
+        "y": 700,
+        "wires": [
+            [
+                "0c0d44b5ef497465"
+            ]
+        ]
+    },
+    {
+        "id": "4cd7ba30c5ccf2de",
+        "type": "Set-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "设置夹爪速度",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1240,
+        "y": 760,
+        "wires": [
+            [
+                "8a77e2f01c7c2649"
+            ]
+        ]
+    },
+    {
+        "id": "3bfa9c4c67b02361",
+        "type": "Set-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "设置夹爪位置",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1240,
+        "y": 820,
+        "wires": [
+            [
+                "8c5941bba0ccd7e7"
+            ]
+        ]
+    },
+    {
+        "id": "04c174f119646be0",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "夹爪力数据",
+        "func": "\nlet forceVal = Number(global.get(\"force\"))\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nlet hexForceVal = forceVal.toString(16)\n\nmsg.payload.cmdData = `01 06 01 01 00 ${hexForceVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 700,
+        "wires": [
+            [
+                "c4e1eecd33f86d19"
+            ]
+        ]
+    },
+    {
+        "id": "0c0d44b5ef497465",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "夹爪速度数据",
+        "func": "\n// 获取速度值\nlet speedVal = Number(global.get(\"speed\"))\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n// 转为16进制\nlet hexSpeedVal = speedVal.toString(16)\n// 拼接报文\nmsg.payload.cmdData = `01 06 01 04 00 ${hexSpeedVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 760,
+        "wires": [
+            [
+                "4cd7ba30c5ccf2de"
+            ]
+        ]
+    },
+    {
+        "id": "8a77e2f01c7c2649",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "夹爪位置数据",
+        "func": "\n// 获取速度值\nlet posVal = Number(global.get(\"pos\")) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n// 转为16进制\nlet hexPosVal = (\"0000\" + posVal.toString(16)).slice(-4)\n// 分别找到高8位 和 低8位\nlet highVal = hexPosVal.slice(0, 2)\nlet lowVal = hexPosVal.slice(2, 4)\n\n// 拼接报文\nmsg.payload.cmdData = `01 06 01 03 ${highVal} ${lowVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 820,
+        "wires": [
+            [
+                "3bfa9c4c67b02361"
+            ]
+        ]
+    },
+    {
+        "id": "8c5941bba0ccd7e7",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1460,
+        "y": 760,
+        "wires": [
+            [
+                "550f2ac66afecf4b"
+            ]
+        ]
+    },
+    {
+        "id": "550f2ac66afecf4b",
+        "type": "Get-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "获取运动状态信号量",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "status_run",
+        "x": 1660,
+        "y": 760,
+        "wires": [
+            [
+                "07c59e7888da7959"
+            ]
+        ]
+    },
+    {
+        "id": "596c9f302a21d9c5",
+        "type": "delay",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "0.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1760,
+        "y": 700,
+        "wires": [
+            [
+                "550f2ac66afecf4b"
+            ]
+        ]
+    },
+    {
+        "id": "07c59e7888da7959",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "运动状态判断",
+        "func": "\nif (msg.payload == 0) {\n    msg.payload = \"\"\n    return [msg, null];\n}\nelse{\n    return [null,msg];\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1860,
+        "y": 760,
+        "wires": [
+            [
+                "596c9f302a21d9c5"
+            ],
+            [
+                "9b745762240f1cb0"
+            ]
+        ]
+    },
+    {
+        "id": "9b745762240f1cb0",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "2335fa6d902f3cbb",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 2030,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "2e58e74e6fcd4bf4",
+        "type": "switch",
+        "z": "dc68ae7bd9f8200b",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1220,
+        "wires": [
+            [
+                "858ed6651a84d7e7"
+            ],
+            [
+                "da2da03736555bed"
+            ]
+        ]
+    },
+    {
+        "id": "858ed6651a84d7e7",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "a9862f0aa6b6990d",
+        "name": "夹爪状态数据",
+        "func": "let statusType = global.get(\"statusType\")\n\nlet statusMap = {\n    \"0\": \"status_init\",\n    \"1\": \"status_run\",\n    \"2\": \"position\",\n}\n\nmsg.payload.semaphoreName = statusMap[statusType]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1180,
+        "wires": [
+            [
+                "fc31a9a74d1ed0f7"
+            ]
+        ]
+    },
+    {
+        "id": "fc31a9a74d1ed0f7",
+        "type": "Get-RobotInfo",
+        "z": "dc68ae7bd9f8200b",
+        "g": "a9862f0aa6b6990d",
+        "name": "获取运动状态信号量",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "",
+        "x": 1260,
+        "y": 1180,
+        "wires": [
+            [
+                "f2fbc161e3a51615"
+            ]
+        ]
+    },
+    {
+        "id": "2bd232b83341eb72",
+        "type": "tcp out",
+        "z": "dc68ae7bd9f8200b",
+        "g": "a9862f0aa6b6990d",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "reply",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 1570,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "f2fbc161e3a51615",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "a9862f0aa6b6990d",
+        "name": "function 9",
+        "func": "let statusType = global.get(\"statusType\")\nif (statusType == \"2\"){\n    msg.payload = Number[msg.payload] / 10\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 1180,
+        "wires": [
+            [
+                "2bd232b83341eb72"
+            ]
+        ]
+    },
+    {
+        "id": "36e62d0dbbed817d",
+        "type": "function",
+        "z": "dc68ae7bd9f8200b",
+        "g": "fd9740078c297ff8",
+        "name": "function 10",
+        "func": "let statusType = global.get(\"statusType\")\nif (statusType == \"2\") {\n    msg.payload = Number[msg.payload[0]] / 10\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 1280,
+        "wires": [
+            [
+                "e1298b11013ff5e9"
+            ]
+        ]
+    },
+    {
+        "id": "d63ffe17eaf33625",
+        "type": "switch",
+        "z": "8b94cbee82175a8d",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "5a6256565ff1e300"
+            ],
+            [
+                "11c212f9874dbc96"
+            ]
+        ]
+    },
+    {
+        "id": "ecde4611743f180e",
+        "type": "switch",
+        "z": "8b94cbee82175a8d",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 700,
+        "wires": [
+            [
+                "09d5924de6546f40"
+            ],
+            [
+                "a15f2d6cd9dba631"
+            ]
+        ]
+    },
+    {
+        "id": "bed96752603e73b0",
+        "type": "switch",
+        "z": "8b94cbee82175a8d",
+        "name": "Modbus类型判断",
+        "property": "modbus_type",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tio",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cab",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 710,
+        "y": 1060,
+        "wires": [
+            [
+                "3d7720eb6f9383fd"
+            ],
+            [
+                "738a3488a17163a6"
+            ]
+        ]
+    },
+    {
+        "id": "11c212f9874dbc96",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "7f3c28104cbf9a8e",
+        "name": "夹爪初始化数据",
+        "func": "\n\nmsg.payload = {\n    'value': 165,\n    'fc': 6,\n    'unitid': 1,\n    'address': 256,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 360,
+        "wires": [
+            [
+                "cc51c34fcdde0c2a"
+            ]
+        ]
+    },
+    {
+        "id": "cc51c34fcdde0c2a",
+        "type": "modbus-flex-write",
+        "z": "8b94cbee82175a8d",
+        "g": "7f3c28104cbf9a8e",
+        "name": "夹爪初始化",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1190,
+        "y": 360,
+        "wires": [
+            [
+                "d07f28586353f877"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5a6256565ff1e300",
+        "type": "Set-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "42f8e6dca0671ea0",
+        "name": "发送初始化",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": "01 06 01 00 00 A5",
+        "x": 1010,
+        "y": 200,
+        "wires": [
+            [
+                "d07f28586353f877"
+            ]
+        ]
+    },
+    {
+        "id": "20aa0aabfe8aa776",
+        "type": "Set-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "设置夹爪力报文",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1200,
+        "y": 620,
+        "wires": [
+            [
+                "fa3c13533c90d940"
+            ]
+        ]
+    },
+    {
+        "id": "79fd674dffdb4799",
+        "type": "Set-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "设置夹爪速度",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 1600,
+        "y": 620,
+        "wires": [
+            [
+                "4ca449aefd707cb6"
+            ]
+        ]
+    },
+    {
+        "id": "7d5dbf936ac4f9be",
+        "type": "Set-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "设置夹爪位置",
+        "setType": "tio",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "tioType": "sendCmd",
+        "cmdChannel": "rs2",
+        "crcType": "crc16",
+        "cmdData": 0,
+        "x": 2000,
+        "y": 620,
+        "wires": [
+            [
+                "0874d6decc365b1b"
+            ]
+        ]
+    },
+    {
+        "id": "09d5924de6546f40",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "夹爪力数据",
+        "func": "msg.forceVal = Number(msg.payload.force)\nmsg.speedVal = Number(msg.payload.speed)\nmsg.position = Number(msg.payload.position)\n\nlet forceVal = msg.forceVal\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nlet hexForceVal = forceVal.toString(16)\n\nmsg.payload.cmdData = `01 06 01 01 00 ${hexForceVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 620,
+        "wires": [
+            [
+                "20aa0aabfe8aa776"
+            ]
+        ]
+    },
+    {
+        "id": "fa3c13533c90d940",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "夹爪速度数据",
+        "func": "\n// 获取速度值\nlet speedVal = Number(msg.speedVal)\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n// 转为16进制\nlet hexSpeedVal = speedVal.toString(16)\n// 拼接报文\nmsg.payload.cmdData = `01 06 01 04 00 ${hexSpeedVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 620,
+        "wires": [
+            [
+                "79fd674dffdb4799"
+            ]
+        ]
+    },
+    {
+        "id": "4ca449aefd707cb6",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "f723d0204a83c0cf",
+        "name": "夹爪位置数据",
+        "func": "\n// 获取速度值\nlet posVal = Number(msg.position) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n// 转为16进制\nlet hexPosVal = (\"0000\" + posVal.toString(16)).slice(-4)\n// 分别找到高8位 和 低8位\nlet highVal = hexPosVal.slice(0, 2)\nlet lowVal = hexPosVal.slice(2, 4)\n\n// 拼接报文\nmsg.payload.cmdData = `01 06 01 03 ${highVal} ${lowVal}`\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1800,
+        "y": 620,
+        "wires": [
+            [
+                "7d5dbf936ac4f9be"
+            ]
+        ]
+    },
+    {
+        "id": "783253384609952b",
+        "type": "http in",
+        "z": "8b94cbee82175a8d",
+        "name": "初始化夹爪",
+        "url": "web/initGripper",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "d63ffe17eaf33625"
+            ]
+        ]
+    },
+    {
+        "id": "cf6ff031ea1f71d6",
+        "type": "http in",
+        "z": "8b94cbee82175a8d",
+        "name": "夹爪控制",
+        "url": "web/control",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 420,
+        "y": 700,
+        "wires": [
+            [
+                "ecde4611743f180e"
+            ]
+        ]
+    },
+    {
+        "id": "a2860b5c881ab7e5",
+        "type": "http in",
+        "z": "8b94cbee82175a8d",
+        "name": "获取夹爪当前状态",
+        "url": "web/gripperStatus",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 450,
+        "y": 1060,
+        "wires": [
+            [
+                "bed96752603e73b0"
+            ]
+        ]
+    },
+    {
+        "id": "d07f28586353f877",
+        "type": "http response",
+        "z": "8b94cbee82175a8d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0874d6decc365b1b",
+        "type": "http response",
+        "z": "8b94cbee82175a8d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2210,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f729e548769f51bb",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "夹爪位置数据",
+        "func": "// 获取速度值\nlet posVal = Number(msg.payload.position) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1820,
+        "y": 760,
+        "wires": [
+            [
+                "6b07505f67879e99"
+            ]
+        ]
+    },
+    {
+        "id": "6b07505f67879e99",
+        "type": "modbus-flex-write",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "设置位置",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 2020,
+        "y": 760,
+        "wires": [
+            [
+                "0874d6decc365b1b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a15f2d6cd9dba631",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "夹爪力数据",
+        "func": "\nlet forceVal = Number(msg.payload.force)\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 760,
+        "wires": [
+            [
+                "e05ef95b159fd2d2"
+            ]
+        ]
+    },
+    {
+        "id": "e05ef95b159fd2d2",
+        "type": "modbus-flex-write",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "设置力度",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1200,
+        "y": 760,
+        "wires": [
+            [
+                "25ef4041ad6bf9fd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "25ef4041ad6bf9fd",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "夹爪速度数据",
+        "func": "// 获取速度值\nlet speedVal = Number(msg.payload.speed)\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 760,
+        "wires": [
+            [
+                "7bbeefdc82e4219a"
+            ]
+        ]
+    },
+    {
+        "id": "7bbeefdc82e4219a",
+        "type": "modbus-flex-write",
+        "z": "8b94cbee82175a8d",
+        "g": "e8bb5bbdc4547dc6",
+        "name": "设置速度",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "33162a4218b81974",
+        "emptyMsgOnFail": true,
+        "keepMsgProperties": true,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1580,
+        "y": 760,
+        "wires": [
+            [
+                "f729e548769f51bb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1c5f8f1fdad58b2d",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.position = msg.payload/10\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 980,
+        "wires": [
+            [
+                "878264383d440bf4"
+            ]
+        ]
+    },
+    {
+        "id": "878264383d440bf4",
+        "type": "Get-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "获取l力",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "force",
+        "x": 1360,
+        "y": 980,
+        "wires": [
+            [
+                "fde4efc5584014bf"
+            ]
+        ]
+    },
+    {
+        "id": "3d7720eb6f9383fd",
+        "type": "Get-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "获取位置",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "position",
+        "x": 1000,
+        "y": 980,
+        "wires": [
+            [
+                "1c5f8f1fdad58b2d"
+            ]
+        ]
+    },
+    {
+        "id": "77d2fdd64c21402f",
+        "type": "Get-RobotInfo",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "获取速度",
+        "infoType": "tio",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "speed",
+        "x": 1700,
+        "y": 980,
+        "wires": [
+            [
+                "d87b393beece9875"
+            ]
+        ]
+    },
+    {
+        "id": "fde4efc5584014bf",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.force = msg.payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 980,
+        "wires": [
+            [
+                "77d2fdd64c21402f"
+            ]
+        ]
+    },
+    {
+        "id": "d87b393beece9875",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "e3d919b2d95915af",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.speed = msg.payload\n\nmsg.payload = {\n    position: msg.position,\n    force: msg.force,\n    speed: msg.speed,\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 980,
+        "wires": [
+            [
+                "11a601bd49cb10c1"
+            ]
+        ]
+    },
+    {
+        "id": "11a601bd49cb10c1",
+        "type": "http response",
+        "z": "8b94cbee82175a8d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 2130,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "738a3488a17163a6",
+        "type": "modbus-getter",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "获取位置",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "514",
+        "quantity": "1",
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1000,
+        "y": 1140,
+        "wires": [
+            [
+                "b96f471270569d0f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b96f471270569d0f",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.position = msg.payload[0]/10\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 1140,
+        "wires": [
+            [
+                "345133dcfc89d3ca"
+            ]
+        ]
+    },
+    {
+        "id": "cd699a30a975d0bc",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.force = msg.payload[0]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1140,
+        "wires": [
+            [
+                "cde4deeab29d67bd"
+            ]
+        ]
+    },
+    {
+        "id": "345133dcfc89d3ca",
+        "type": "modbus-getter",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "获取力",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "257",
+        "quantity": "1",
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1350,
+        "y": 1140,
+        "wires": [
+            [
+                "cd699a30a975d0bc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e5593a8f37016a9b",
+        "type": "function",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "夹爪状态数据",
+        "func": "\n\nmsg.speed = msg.payload[0]\n\nmsg.payload = {\n    position: msg.position,\n    force: msg.force,\n    speed: msg.speed,\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 1140,
+        "wires": [
+            [
+                "11a601bd49cb10c1"
+            ]
+        ]
+    },
+    {
+        "id": "cde4deeab29d67bd",
+        "type": "modbus-getter",
+        "z": "8b94cbee82175a8d",
+        "g": "430a2895963b7898",
+        "name": "获取速度",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "260",
+        "quantity": "1",
+        "server": "33162a4218b81974",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1720,
+        "y": 1140,
+        "wires": [
+            [
+                "e5593a8f37016a9b"
+            ],
+            []
+        ]
+    }
+]

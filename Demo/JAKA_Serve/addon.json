@@ -1,0 +1,533 @@
+[
+    {
+        "id": "8594df15f755b8de",
+        "type": "tab",
+        "label": "JAKA_Serve",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "afd8c87fd0e48c83",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "f61c0a026c31f6e0"
+            ]
+        ]
+    },
+    {
+        "id": "f61c0a026c31f6e0",
+        "type": "Get-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Get current position",
+        "infoType": "position",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "be43c0739ea1e657"
+            ]
+        ]
+    },
+    {
+        "id": "be43c0739ea1e657",
+        "type": "debug",
+        "z": "8594df15f755b8de",
+        "name": "Position",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "39af14a74d0bcd5b",
+        "type": "Get-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Get  Modbus Slave DO0 status",
+        "infoType": "IO",
+        "ioSource": "modbusS",
+        "ioType": "do",
+        "range": "single",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "4fb2a1604c173e7b"
+            ]
+        ]
+    },
+    {
+        "id": "741b0ed607affad5",
+        "type": "debug",
+        "z": "8594df15f755b8de",
+        "name": "DO On",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0ea55bb0772205b6",
+        "type": "switch",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1070,
+        "y": 240,
+        "wires": [
+            [
+                "741b0ed607affad5"
+            ],
+            [
+                "9e68f4d89158c3cd"
+            ]
+        ]
+    },
+    {
+        "id": "9e68f4d89158c3cd",
+        "type": "debug",
+        "z": "8594df15f755b8de",
+        "name": "DO Off",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "12b8466d7893a834",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "Triggered every 0.5s",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "39af14a74d0bcd5b"
+            ]
+        ]
+    },
+    {
+        "id": "de9f11d251753117",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 480,
+        "wires": [
+            [
+                "87c8c25637412de3"
+            ]
+        ]
+    },
+    {
+        "id": "87c8c25637412de3",
+        "type": "Set-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Set  Modbus Slave DO 0-16 On",
+        "setType": "IO",
+        "ioSource": "modbusS",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": "1",
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "40c8b80aa28307df"
+            ]
+        ]
+    },
+    {
+        "id": "4fb2a1604c173e7b",
+        "type": "function",
+        "z": "8594df15f755b8de",
+        "name": "filter",
+        "func": "//global variable preState defined in \"On Start\"\n\n\nlet preState = context.get(\"preState\") \nlet state = msg.payload\n\n\nif (preState != state){\n    context.set(\"preState\",state)\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set(\"preState\", null);",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 240,
+        "wires": [
+            [
+                "0ea55bb0772205b6"
+            ]
+        ]
+    },
+    {
+        "id": "40c8b80aa28307df",
+        "type": "function",
+        "z": "8594df15f755b8de",
+        "name": "counter",
+        "func": "\nlet counter = context.get(\"counter\")\n\nif(counter <= 15){\n\n    msg.payload.ioIndex = counter\n    counter++\n    context.set(\"counter\", counter)\n    return msg;\n\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set(\"counter\",0)",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "9eb39034d5121bfe"
+            ]
+        ]
+    },
+    {
+        "id": "9eb39034d5121bfe",
+        "type": "delay",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "0.1",
+        "timeoutUnits": "seconds",
+        "rate": "10",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 400,
+        "wires": [
+            [
+                "87c8c25637412de3"
+            ]
+        ]
+    },
+    {
+        "id": "5e031b6129fb52f2",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "Power On & Enable",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 700,
+        "wires": [
+            [
+                "1a1b45dbb794c5fa"
+            ]
+        ]
+    },
+    {
+        "id": "1a1b45dbb794c5fa",
+        "type": "Set-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Power On",
+        "setType": "power",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "powerOn",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "x": 500,
+        "y": 700,
+        "wires": [
+            [
+                "dd8a84c7a2741101"
+            ]
+        ]
+    },
+    {
+        "id": "dd8a84c7a2741101",
+        "type": "Get-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Is Power On?",
+        "infoType": "status",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "power",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "x": 700,
+        "y": 700,
+        "wires": [
+            [
+                "4b04e9337ac3048f"
+            ]
+        ]
+    },
+    {
+        "id": "4b04e9337ac3048f",
+        "type": "switch",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 700,
+        "wires": [
+            [
+                "62acf6a91b11c831"
+            ],
+            [
+                "f62879c51c03a0bf"
+            ]
+        ]
+    },
+    {
+        "id": "62acf6a91b11c831",
+        "type": "delay",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 620,
+        "wires": [
+            [
+                "dd8a84c7a2741101"
+            ]
+        ]
+    },
+    {
+        "id": "f62879c51c03a0bf",
+        "type": "Set-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Enable",
+        "setType": "power",
+        "ioSource": "cab",
+        "programType": "run",
+        "powerType": "enable",
+        "ioType": "do",
+        "ioIndex": 0,
+        "doValue": 0,
+        "aoValue": 0,
+        "sysType": "tcp",
+        "frameId": 0,
+        "frameName": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "tcpId": "",
+        "ucsId": "",
+        "extIoState": "0",
+        "payloadVal": 0,
+        "centroidX": 0,
+        "centroidY": 0,
+        "centroidZ": 0,
+        "prgName": "",
+        "prgRate": 0,
+        "x": 1080,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82a90ef315cbc220",
+        "type": "Robot-Motion",
+        "z": "8594df15f755b8de",
+        "name": "Joint Motion",
+        "moveType": "moveJ",
+        "velL": "",
+        "accL": "",
+        "velJ": "20",
+        "accJ": "",
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "Rx": 0,
+        "Ry": 0,
+        "Rz": 0,
+        "joint1": 0,
+        "joint2": "90",
+        "joint3": "90",
+        "joint4": "90",
+        "joint5": "-90",
+        "joint6": 0,
+        "x": 490,
+        "y": 920,
+        "wires": [
+            [
+                "3a9604a5197e8e22"
+            ]
+        ]
+    },
+    {
+        "id": "b3ae0ee86df29c67",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 920,
+        "wires": [
+            [
+                "82a90ef315cbc220"
+            ]
+        ]
+    },
+    {
+        "id": "3a9604a5197e8e22",
+        "type": "debug",
+        "z": "8594df15f755b8de",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 920,
+        "wires": []
+    }
+]

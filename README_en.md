@@ -1,7 +1,7 @@
 # Jaka AddOn
 
 AddOn Developer Guide: [JakaCobot.github.io](https://jakacobot.github.io/guide/addOn/AddOn3.0.html)
-
+Version Download：[Release](https://github.com/JakaCobot/jaka_addon_kit/releases)
 
 ## Feedback
 ---

@@ -1,6 +1,9 @@
 # Jaka AddOn
 
 AddOn开发指南：[JakaCobot.github.io](https://jakacobot.github.io/guide/addOn/AddOn3.0.html)
+版本下载：[Release](https://github.com/JakaCobot/jaka_addon_kit/releases)
+
+
 
 
 ## 反馈
