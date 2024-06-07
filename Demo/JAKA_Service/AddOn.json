@@ -1,0 +1,130 @@
+[
+    {
+        "id": "8594df15f755b8de",
+        "type": "tab",
+        "label": "JAKA_Service",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bdcdc0a1046e57e6",
+        "type": "Get-RobotInfo",
+        "z": "8594df15f755b8de",
+        "name": "Power State",
+        "infoType": "status",
+        "ioSource": "all",
+        "ioType": "all",
+        "ioIndex": 0,
+        "startIndex": 0,
+        "endIndex": 0,
+        "statusType": "enabled",
+        "sysType": "tcpList",
+        "programType": "name",
+        "forceType": "settings",
+        "variableType": "system",
+        "variableName": "",
+        "tioType": "semaphore",
+        "semaphoreName": "",
+        "x": 890,
+        "y": 460,
+        "wires": [
+            [
+                "47601b6d787eab90",
+                "36154c69a2f95309"
+            ]
+        ]
+    },
+    {
+        "id": "3861cad3fdb23434",
+        "type": "http in",
+        "z": "8594df15f755b8de",
+        "name": "get_power_state",
+        "url": "/get_power_state",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "bdcdc0a1046e57e6"
+            ]
+        ]
+    },
+    {
+        "id": "2aae14a62da25090",
+        "type": "inject",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "bdcdc0a1046e57e6"
+            ]
+        ]
+    },
+    {
+        "id": "47601b6d787eab90",
+        "type": "debug",
+        "z": "8594df15f755b8de",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "36154c69a2f95309",
+        "type": "function",
+        "z": "8594df15f755b8de",
+        "name": "function 1",
+        "func": "let re = {\n    \"isPower\":msg.payload\n}\n\nmsg.payload = re\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 460,
+        "wires": [
+            [
+                "6e3def9fcb7cf071"
+            ]
+        ]
+    },
+    {
+        "id": "6e3def9fcb7cf071",
+        "type": "http response",
+        "z": "8594df15f755b8de",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1370,
+        "y": 460,
+        "wires": []
+    }
+]

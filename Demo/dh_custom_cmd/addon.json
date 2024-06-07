@@ -431,7 +431,9 @@
             "cc51c34fcdde0c2a"
         ],
         "x": 914,
-        "y": 319
+        "y": 319,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "430a2895963b7898",
@@ -455,7 +457,9 @@
             "cde4deeab29d67bd"
         ],
         "x": 914,
-        "y": 1099
+        "y": 1099,
+        "w": 1072,
+        "h": 82
     },
     {
         "id": "42f8e6dca0671ea0",
@@ -469,7 +473,9 @@
             "5a6256565ff1e300"
         ],
         "x": 914,
-        "y": 159
+        "y": 159,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "f723d0204a83c0cf",
@@ -488,7 +494,9 @@
             "4ca449aefd707cb6"
         ],
         "x": 894,
-        "y": 579
+        "y": 579,
+        "w": 1212,
+        "h": 82
     },
     {
         "id": "e8bb5bbdc4547dc6",
@@ -507,7 +515,9 @@
             "7bbeefdc82e4219a"
         ],
         "x": 894,
-        "y": 719
+        "y": 719,
+        "w": 1212,
+        "h": 82
     },
     {
         "id": "e3d919b2d95915af",
@@ -531,7 +541,9 @@
             "d87b393beece9875"
         ],
         "x": 914,
-        "y": 939
+        "y": 939,
+        "w": 1072,
+        "h": 82
     },
     {
         "id": "33162a4218b81974",
@@ -1347,7 +1359,7 @@
         "z": "dc68ae7bd9f8200b",
         "g": "40ff848468bd5660",
         "name": "夹爪位置数据",
-        "func": "// 获取速度值\nlet posVal = Number(global.get(\"pos\")) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "// 获取速度值\nlet posVal = Number(global.get(\"pos\")) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1756,7 +1768,7 @@
         "z": "dc68ae7bd9f8200b",
         "g": "40ff848468bd5660",
         "name": "夹爪力数据",
-        "func": "let forceVal = Number(global.get(\"force\"))\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "let forceVal = Number(global.get(\"force\"))\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1799,7 +1811,7 @@
         "z": "dc68ae7bd9f8200b",
         "g": "40ff848468bd5660",
         "name": "夹爪速度数据",
-        "func": "// 获取速度值\nlet speedVal = Number(global.get(\"speed\"))\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "// 获取速度值\nlet speedVal = Number(global.get(\"speed\"))\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3037,7 +3049,7 @@
         "z": "8b94cbee82175a8d",
         "g": "e8bb5bbdc4547dc6",
         "name": "夹爪位置数据",
-        "func": "// 获取速度值\nlet posVal = Number(msg.payload.position) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "// 获取速度值\nlet posVal = Number(global.get(\"pos\")) * 10\n// 上下限检查\nif (posVal < 0) {\n    posVal = 0\n} else if (posVal > 1000) {\n    posVal = 1000\n}\n\n\nmsg.payload = {\n    'value': posVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 259,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3080,7 +3092,7 @@
         "z": "8b94cbee82175a8d",
         "g": "e8bb5bbdc4547dc6",
         "name": "夹爪力数据",
-        "func": "\nlet forceVal = Number(msg.payload.force)\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "global.set(\"force\", msg.payload.force)\nglobal.set(\"speed\", msg.payload.speed)\nglobal.set(\"pos\", msg.payload.position)\n\n\nlet forceVal = Number(global.get(\"force\"))\n\nif (forceVal < 20) {\n    forceVal = 20\n} else if (forceVal > 100) {\n    forceVal = 100\n}\n\nmsg.payload = {\n    'value': forceVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 257,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3123,7 +3135,7 @@
         "z": "8b94cbee82175a8d",
         "g": "e8bb5bbdc4547dc6",
         "name": "夹爪速度数据",
-        "func": "// 获取速度值\nlet speedVal = Number(msg.payload.speed)\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 16,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
+        "func": "// 获取速度值\nlet speedVal = Number(global.get(\"speed\"))\n// 上下限检查\nif (speedVal < 1) {\n    speedVal = 1\n} else if (speedVal > 100) {\n    speedVal = 100\n}\n\nmsg.payload = {\n    'value': speedVal,\n    'fc': 6,\n    'unitid': 1,\n    'address': 260,\n    'quantity': 1\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
